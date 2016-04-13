@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+  - docker
+  
+notifications:
+  email:
+    recipients:
+      - xn0px90@gmail.com
