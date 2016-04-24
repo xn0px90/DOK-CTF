@@ -35,12 +35,7 @@ RUN cd /opt/code/vala-0.24.0; ./configure --prefix=/usr ; make && make install
 RUN cd /opt/code; git clone https://github.com/radare/radare2.git; cd radare2; ./sys/all.sh?/
 
 # gcc for cgo
-RUN apt-get update && apt-get install -y --no-install-recommends \
-		g++ \
-		gcc \
-		libc6-dev \
-		make \
-	&& rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get upgradet install -y --no-install-recommends \
 
 ENV GOLANG_VERSION 1.6.1
 ENV GOLANG_DOWNLOAD_URL https://golang.org/dl/go$GOLANG_VERSION.linux-amd64.tar.gz
