@@ -15,7 +15,6 @@ ENV GOLANG_BOOTSTRAP_URL https://golang.org/dl/go$GOLANG_BOOTSTRAP_VERSION.src.t
 ENV GOLANG_BOOTSTRAP_SHA1 486db10dc571a55c8d795365070f66d343458c48
 
 # https://golang.org/issue/14851
-COPY no-pic.patch /
 
 RUN set -ex \
 	&& apk add --no-cache --virtual .build-deps \
