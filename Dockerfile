@@ -5,7 +5,7 @@ RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /e
 ENV $DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
 # tools and deps 
-RUN apt-get update && apt-get install -y \
+RUN apt-get update && apt-get -y upgrade && apt-get -y install \
 		curl \
 		openssl \
 		g++ \
