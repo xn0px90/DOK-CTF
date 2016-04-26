@@ -7,6 +7,8 @@ ENV DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgr
 
 # gcc for cgo
 RUN apt-get update && apt-get install -y \
+		curl\
+		openssl\
 		g++ \
 		gcc \
 		libc6-dev \
