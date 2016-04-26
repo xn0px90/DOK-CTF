@@ -20,7 +20,7 @@ RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean\
 		libmagic-dev \
 		httpie \
 		lib
- 		swig \ 
+ 		swig3.0 \ 
  		flex \ 
  		bison \
  		tmux \
