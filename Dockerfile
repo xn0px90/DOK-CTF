@@ -48,7 +48,7 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 COPY go-wrapper /usr/local/bin/
-#debugging Go apps with dvl DWARF spec th eright way
+#debugging Go apps with dlv DWARF spec th eright way
 RUN go get github.com/derekparker/delve/cmd/dlv 
 
 
