@@ -4,8 +4,8 @@ RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /e
     echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 ENV $DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
-# gcc for cgo
-RUN apt-get -y update && apt-get -y install \
+# tools and deps 
+RUN apt-get update && apt-get install -y \
 		curl \
 		openssl \
 		g++ \
