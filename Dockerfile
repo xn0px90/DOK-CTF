@@ -7,12 +7,24 @@ ENV DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgr
 
 # gcc for cgo
 RUN apt-get update && apt-get install -y \
-		curl\
-		openssl\
+		curl \
+		openssl \
 		g++ \
 		gcc \
 		libc6-dev \
 		make \
+		software-properties-common \
+		python-all-dev \
+		wget \
+ 		swig \ 
+ 		flex \ 
+ 		bison \ 
+ 		git \ 
+ 		pkg-config \
+ 		glib-2.0 \
+		python-gobject-dev \ 
+		valgrind \ 
+		gdb \
 	&& rm -rf /var/lib/apt/lists/*
 
 ENV GOLANG_VERSION 1.6.2
@@ -40,9 +52,6 @@ RUN mkdir -p /opt/code/
 # install packages required to compile vala and radare2
 RUN apt-get update
 RUN apt-get upgrade -y
-RUN apt-get install -y software-properties-common python-all-dev wget
-RUN apt-get install -y swig flex bison git gcc g++ make pkg-config glib-2.0
-RUN apt-get install -y python-gobject-dev valgrind gdb
 
 ENV VALA_TAR vala-0.26.1
 
