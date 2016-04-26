@@ -5,7 +5,7 @@ RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /e
 ENV KALI_UP noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
 # gcc for cgo
-RUN "$KALI_UP" \
+RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean\
 		curl \
 		openssl \
 		g++ \
