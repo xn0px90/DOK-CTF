@@ -5,7 +5,7 @@ RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /e
 ENV KALI_UP noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
 # gcc for cgo
-RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean\
+RUN apt-get -y update && apt-get -y \
 		curl \
 		openssl \
 		g++ \
@@ -20,7 +20,7 @@ RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean\
 		libmagic-dev \
 		httpie \
 		lib
- 		swig3.0 \ 
+ 		swig \ 
  		flex \ 
  		bison \
  		tmux \
