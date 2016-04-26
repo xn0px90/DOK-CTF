@@ -6,7 +6,7 @@ ENV $DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upg
 
 # tools and deps 
 RUN apt-get update; apt-get -y upgrade
-RUN apt-get -y install \
+RUN apt-get install -y \
 		curl \
 		openssl \
 		g++ \
@@ -20,7 +20,6 @@ RUN apt-get -y install \
 		libzip-dev \
 		libmagic-dev \
 		httpie \
-		lib
  		swig \ 
  		flex \ 
  		bison \
