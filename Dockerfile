@@ -15,9 +15,15 @@ RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean\
 		software-properties-common \
 		python-all-dev \
 		wget \
+		libcapstone-dev \
+		libzip-dev \
+		libmagic-dev \
+		httpie \
+		lib
  		swig \ 
  		flex \ 
- 		bison \ 
+ 		bison \
+ 		tmux \
  		git \ 
  		pkg-config \
  		glib-2.0 \
@@ -42,6 +48,8 @@ RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
 
 COPY go-wrapper /usr/local/bin/
+#debugging Go apps with dvl DWARF spec th eright way
+go get github.com/derekparker/delve/cmd/dlv 
 
 
 # Set correct environment variables.
