@@ -1,5 +1,4 @@
 FROM kalilinux/kali-linux-docker
-#FROM buildpack-deps:wheezy-scm
 MAINTAINER xn0px90@gmail.com
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
     echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
@@ -62,11 +61,11 @@ RUN cd /opt/code && \
 	tar -Jxf ${VALA_TAR}.tar.xz
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
-#RUN cd /opt/code; git clone https://github.com/radare/radare2.git; cd radare2; ./sys/all.sh
+RUN cd /opt/code; git clone https://github.com/radare/radare2; cd radare2; ./sys/all.sh
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-#RUN r2 -V
+RUN r2 -V
 
 CMD ["/bin/bash"]
