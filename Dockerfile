@@ -2,10 +2,10 @@ FROM kalilinux/kali-linux-docker
 MAINTAINER xn0px90@gmail.com
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
     echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
-ENV DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
+ENV KALI_UP noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
 # gcc for cgo
-RUN apt-get update && apt-get install -y \
+RUN "$KALI_UP" \
 		curl \
 		openssl \
 		g++ \
@@ -56,13 +56,13 @@ ENV VALA_TAR vala-0.26.1
 
 # compile vala
 RUN cd /opt/code && \
-	git clone https://github.com/radare/radare2.git \
 	wget -c https://download.gnome.org/sources/vala/0.26/${VALA_TAR}.tar.xz && \
 	shasum ${VALA_TAR}.tar.xz | grep -q 0839891fa02ed2c96f0fa704ecff492ff9a9cd24 && \
 	tar -Jxf ${VALA_TAR}.tar.xz
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
 RUN cd /opt/code 
+RUN cd git clone https://github.com/radare/radare2.git \ 
 RUN cd radare2; ./sys/install.sh
 
 # Clean up APT when done.
