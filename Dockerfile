@@ -49,7 +49,7 @@ WORKDIR $GOPATH
 
 COPY go-wrapper /usr/local/bin/
 #debugging Go apps with dvl DWARF spec th eright way
-go get github.com/derekparker/delve/cmd/dlv 
+RUN go get github.com/derekparker/delve/cmd/dlv 
 
 
 # Set correct environment variables.
