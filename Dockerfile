@@ -61,9 +61,9 @@ RUN cd /opt/code && \
 	tar -Jxf ${VALA_TAR}.tar.xz
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
-RUN cd /opt/code && \ 
-	git clone https://github.com/radare/radare2 \ 
-	cd radare2\ 
+RUN cd /opt/code 
+RUN git clone https://github.com/radare/radare2 \ 
+	cd radare2 \ 
 	./sys/all.sh
 
 # Clean up APT when done.
