@@ -67,6 +67,6 @@ RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN r2 -V
+#RUN r2 -V
 
 CMD ["/bin/bash"]
