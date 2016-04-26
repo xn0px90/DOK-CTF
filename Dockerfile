@@ -38,10 +38,8 @@ RUN set -ex \
 	&& tar -C /usr/local -xzf golang.tar.gz \
 	&& rm golang.tar.gz \
 	&& cd /usr/local/go/src \
-	&& patch -p2 -i /no-pic.patch \
 	&& ./make.bash \
-	\
-	&& rm -rf /usr/local/bootstrap /usr/local/go/pkg/bootstrap /*.patch \
+	&& rm -rf /usr/local/bootstrap /usr/local/go/pkg/bootstrap 
 	&& apk del .build-deps
 
 ENV GOPATH /go
