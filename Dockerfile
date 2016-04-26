@@ -1,12 +1,12 @@
-#FROM kalilinux/kali-linux-docker
-FROM buildpack-deps:wheezy-scm
+FROM kalilinux/kali-linux-docker
+#FROM buildpack-deps:wheezy-scm
 MAINTAINER xn0px90@gmail.com
 RUN echo "deb http://http.kali.org/kali kali-rolling main contrib non-free" > /etc/apt/sources.list && \
 echo "deb-src http://http.kali.org/kali kali-rolling main contrib non-free" >> /etc/apt/sources.list
 ENV DEBIAN_FRONTEND noninteractive RUN apt-get -y update && apt-get -y dist-upgrade && apt-get clean
 
 # gcc for cgo
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && apt-get install -y \
 		g++ \
 		gcc \
 		libc6-dev \
