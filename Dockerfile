@@ -70,7 +70,7 @@ RUN cd /opt/code && \
 RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
 RUN cd /opt/code 
-RUN cd git clone https://github.com/radare/radare2.git
+RUN git clone https://github.com/radare/radare2.git
 RUN cd radare2; ./sys/install.sh
 
 # Clean up APT when done.
