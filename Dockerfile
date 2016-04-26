@@ -71,7 +71,7 @@ RUN cd /opt/code/${VALA_TAR}; ./configure --prefix=/usr ; make && make install
 # compile radare and bindings
 RUN cd /opt/code 
 RUN git clone https://github.com/radare/radare2.git
-RUN cd radare2; ./sys/install.sh
+RUN cd radare2; ./sys/all.sh
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
