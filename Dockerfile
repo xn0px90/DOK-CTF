@@ -74,6 +74,7 @@ RUN git clone https://github.com/radare/radare2.git
 RUN cd radare2; ./sys/install.sh
 
 # Clean up APT when done.
+RUN apt-get -y update && apt-get -y dist-upgrade
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN r2 -V
