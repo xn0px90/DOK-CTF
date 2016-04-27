@@ -75,7 +75,7 @@ RUN git clone https://github.com/radare/radare2.git
 RUN cd radare2; ./sys/install.sh
 
 #VIM SPF13 awesome stuff
-RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
+#RUN curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 
 
 # Clean up APT when done.
