@@ -1,6 +1,6 @@
 # DOCK-CTF
 
-##This template will intall radare2 with go 1.6.2 with in ~/GOCODE/
+##This template will intall radare2 with go 1.7.1 with in ~/GOCODE/
 ##r2pm -i r2pipe-Go
 ##r2pm - r2bind-Go //TODO(create script)
 ### Kali apt
